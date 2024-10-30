@@ -1,0 +1,14 @@
+[http]
+	sslverify = false
+[user]
+	email = {{ .email }}
+	name =  {{ .name }}
+[core]
+	editor = nvim
+    abbrev = 6
+[alias]
+	logg = log --pretty=oneline --abbrev-commit --graph
+	logga = logg --all
+    mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' 
+[gpg]
+	program = C:\\Program Files\\Git\\usr\\bin\\gpg.exe
