@@ -2,7 +2,7 @@
 
 -- LEADER
 -- Remap of leader keys
-
+--
 
 vim.g.mapleader = "'"
 vim.g.localleader = "\\"
@@ -63,7 +63,20 @@ require("lualine").setup({
 
 vim.cmd([[colorscheme rose-pine]])
 
-require('telescope').load_extension('harpoon')
+require('telescope').load_extension('harpoon') -- not entirely sure why these need to integrate TODO
+require('telescope').load_extension('chezmoi') -- handles searching through config file
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { os.getenv("HOME") .. "/.local/share/chezmoi/*" },
+    callback = function(ev)
+        print("WATCHING THIS BUFFER")
+        local bufnr = ev.buf
+        local edit_watch = function()
+            require("chezmoi.commands.__edit").watch(bufnr)
+        end
+        vim.schedule(edit_watch)
+    end,
+})
 
 vim.cmd("highlight Beacon guibg=black ctermbg=15")
 

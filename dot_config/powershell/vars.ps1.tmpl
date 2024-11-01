@@ -1,0 +1,16 @@
+# machinewide env variables
+$env:EDITOR="C:\Program Files\Neovim\bin\nvim.exe"
+$env:VISUAL="C:\Program Files\Neovim\bin\nvim.exe"
+$env:HOME={{- .chezmoi.homeDir }}
+$env:XDG_CONFIG_HOME="$($env:HOME)\.config\"
+
+# custom files and paths for your PS session
+$Env:WEZTERM_CONFIG="$($env:XDG_CONFIG_HOME)\wezterm\"
+$Env:NVIM_CONFIG="$($env:XDG_CONFIG_HOME)\nvim"
+$Env:PSCONFIG="$($env:XDG_CONFIG_HOME)\powershell"
+$Env:PROJECTS="$($env:HOME)\projects"
+
+# VM Shared directory Paths 
+[System.Environment]::SetEnvironmentVariable( "SHARE_VITEK_AIMB279" , "$($Env:PROJECTS)\Development - VITEK AIMB 279\shared_folder", 'machine')
+[System.Environment]::SetEnvironmentVariable( "SHARE_VITEK_AIMB275" , "$($Env:PROJECTS)\Development - VITEK AIMB 275\shared_folder", 'machine')
+[System.Environment]::SetEnvironmentVariable( "SHARE_VIRTUO_AIMB279" , "$($Env:PROJECTS)\Development - VIRTUO AIMB 279\shared_folder", 'machine')

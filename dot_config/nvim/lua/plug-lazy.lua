@@ -258,6 +258,21 @@ require('lazy').setup({
         lazy = false
     },
 
-
+    -- Lazy.nvim
+    {
+      'xvzc/chezmoi.nvim',
+      dependencies = { 'nvim-lua/plenary.nvim' },
+      config = function()
+        require("chezmoi").setup {
+            --  e.g. ~/.local/share/chezmoi/*
+            edit = {
+                watch = true,
+            },
+            notification = {
+                on_watch = true,
+            },
+        }
+      end
+    },
 
 })

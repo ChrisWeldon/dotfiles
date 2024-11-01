@@ -10,6 +10,7 @@ map('n', '<leader>ff', [[:Telescope find_files hidden=true<CR>]], { noremap = tr
 map('n', '<leader>fh', [[:Telescope help_tags hidden=true<CR>]], { noremap = true })
 map('n', '<leader>fg', [[:Telescope live_grep hidden=true<CR>]], { noremap = true })
 map('n', '<leader>fb', [[:Telescope buffers<CR>]], { noremap = true })
+map('n', '<leader>fc', [[:Telescope chezmoi find_files<CR>]], { noremap = true })
 map('n', '<leader>cc', [[:Centerpad<CR>]], { noremap = true })
 
 -- [[ Quality of Life ]]

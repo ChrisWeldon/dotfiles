@@ -1,0 +1,9 @@
+# This file doesn't just work on its own, this file is sourced into $PROFILE
+. "$PSScriptRoot\vars.ps1"
+
+Set-Alias -Name cm -Value "chezmoi"
+
+. "C:\Users\adm16015577\projects\ce-utils\module.ps1"
+Make-ceUtilModule
+
+oh-my-posh init powershell --config "$PSScriptRoot/shell_theme.omp.json" | Invoke-Expression
