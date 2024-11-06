@@ -1,7 +1,7 @@
 # machinewide env variables
 $env:EDITOR="C:\Program Files\Neovim\bin\nvim.exe"
 $env:VISUAL="C:\Program Files\Neovim\bin\nvim.exe"
-$env:HOME={{- .chezmoi.homeDir }}
+$env:HOME="{{- .chezmoi.homeDir }}"
 $env:XDG_CONFIG_HOME="$($env:HOME)\.config\"
 
 # custom files and paths for your PS session
