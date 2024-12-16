@@ -205,7 +205,7 @@ require('lazy').setup({
             {"<leader>dnt",[[
                 <cmd>FloatermNew! --autoclose=0 --position=bottomright --width=0.7 --disposable dotnet build<CR>
                 powershell.exe <CR>
-                Import-Module .\bin\Debug\netstandard2.0\PitRelMgmt.psd1 <CR>
+                Import-Module .\bin\Debug\net472\PitRelMgmt.psd1 <CR>
             ]], desc="Dotnet Test Window"}
         },
         config = function()

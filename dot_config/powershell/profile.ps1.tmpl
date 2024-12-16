@@ -6,4 +6,9 @@ Set-Alias -Name cm -Value "chezmoi"
 . "C:\Users\adm16015577\projects\ce-utils\module.ps1"
 Make-ceUtilModule
 
+# simulating a bioMerieux device
+$Env:BIOMERIEUX_PROGRAMS = "C:\Users\adm16015577\projects\VITEK\D_Drive\biomerieux\programs"
+$Env:BIOMERIEUX_DATA = "C:\Users\adm16015577\projects\VITEK\D_Drive\biomerieux\data"
+
+
 oh-my-posh init powershell --config "$PSScriptRoot/shell_theme.omp.json" | Invoke-Expression
